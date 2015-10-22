@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgroundLight"
+    tools:context="com.example.phuctruong.ezc.View.MenuActivity">
+
+    <include
+        android:id="@+id/appbar_menu"
+        layout="@layout/appbar" />
+
+    <ListView
+        android:id="@+id/lsvMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#e5e5e5"
+        android:clipToPadding="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"></ListView>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:background="@color/primaryColor">
+        <ImageView
+            android:id="@+id/activity_add_icon"
+            android:layout_width="32dp"
+            android:layout_height="fill_parent"
+            android:src="@drawable/icon_add"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="16dp"/>
+        <TextView
+            android:layout_toRightOf="@id/activity_add_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="add menu"
+            android:gravity="center"
+            android:textColor="@color/textSubColor"
+            android:textSize="@dimen/abc_text_size_display_1_material"/>
+    </RelativeLayout>
+</LinearLayout>

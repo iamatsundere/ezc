@@ -1,0 +1,16 @@
+<!-- drawable/chevron_left.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+	android:name="left"
+	android:width="24dp"
+	android:height="24dp"
+	android:viewportHeight="400"
+	android:viewportWidth="400">
+	<path
+		android:name="back_button"
+		android:fillColor="@color/iconSecondaryColor"
+		android:pathData="M199.7,209.6c49.5,0,89.5-46.9,89.5-104.8C289.2,24.5,249.1,0,199.7,0
+			c-49.5,0-89.5,24.5-89.5,104.8C110.1,162.7,150.2,209.6,199.7,209.6L199.7,209.6z M199.7,209.6 M397.4,363.9l-45.2-101.8c-2.1-4.7-5.7-8.5-10.2-10.9l-70.1-36.5c-1.5-0.8-3.4-0.6-4.8,0.4
+			c-19.8,15-43.1,22.9-67.4,22.9c-24.3,0-47.6-7.9-67.4-22.9c-1.4-1.1-3.3-1.2-4.8-0.4l-70.1,36.5c-4.5,2.3-8.1,6.2-10.2,10.9
+			L2,363.9c-3.1,7-2.5,15,1.7,21.5c4.2,6.4,11.3,10.3,18.9,10.3h354.2c7.7,0,14.8-3.8,18.9-10.3
+			C399.9,378.9,400.5,370.9,397.4,363.9L397.4,363.9z M397.4,363.9"/>
+</vector>
