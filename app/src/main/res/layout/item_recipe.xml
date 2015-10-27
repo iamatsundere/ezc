@@ -20,7 +20,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="0.1"></RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="0.8"
@@ -30,22 +30,22 @@
                 android:id="@+id/item_recipe_img"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.3"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img" />
 
             <TextView
+                android:layout_alignParentBottom="true"
                 android:id="@+id/item_recipe_name"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="0.7"
-                android:background="@color/accentColor"
+                android:layout_height="wrap_content"
+                android:background="@color/accentColorTransparent"
                 android:gravity="right|center_vertical"
                 android:scaleType="centerCrop"
                 android:text="AaBbCcDd"
                 android:textColor="#000"
                 android:textSize="@dimen/abc_text_size_headline_material" />
-        </LinearLayout>
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dip"
