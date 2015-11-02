@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 
 public class CategoryActivity extends ActionBarActivity {
 
-    ListView lw;
+    GridView grdv;
     ArrayList<Category> plist;
     ImageButton back;
 
@@ -35,7 +36,7 @@ public class CategoryActivity extends ActionBarActivity {
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("CATEGORY");
 
-        lw = (ListView) findViewById(R.id.grid);
+        grdv = (GridView) findViewById(R.id.grid);
         setUpView();
     }
 
@@ -60,7 +61,7 @@ public class CategoryActivity extends ActionBarActivity {
 
     public void setUpView() {
         loadData();
-        lw.setAdapter(new PlaceAdapter());
+        grdv.setAdapter(new PlaceAdapter());
     }
 
     public class PlaceAdapter extends BaseAdapter {

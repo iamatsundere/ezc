@@ -8,16 +8,17 @@
     <include
         android:id="@+id/appbar_catgr"
         layout="@layout/appbar"/>
-    <ListView
+    <GridView
         android:layout_below="@id/appbar_catgr"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#e5e5e5"
         android:clipToPadding="false"
         android:focusable="false"
+        android:numColumns="2"
         android:focusableInTouchMode="false">
-    </ListView>
+    </GridView>
 </LinearLayout>
