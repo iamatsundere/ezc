@@ -1,2 +1,0 @@
-# ezc
-ezc for JAVa
