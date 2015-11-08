@@ -11,6 +11,7 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,6 +36,12 @@ public class PriceActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("PRICE LIST");
 
@@ -108,71 +115,12 @@ public class PriceActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//Tim kiem
-    SearchView searchView;
-    protected void setupSearchView(Menu menu)
-    {
-        searchView = (SearchView) menu.findItem(R.id.action_search)
-                .getActionView();
-        searchView.setIconifiedByDefault(true);
-        searchView.setQueryHint("Search...");
-        searchView.requestFocusFromTouch();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-            @Override
-            public boolean onQueryTextSubmit(String query)
-            {
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String query)
-            {
-                return false;
-            }
-        });
-
-        setupSearchViewTheme(searchView);
-    }
-
     /**
      * Sets the up search view theme.
      *
      * @param searchView
      *            the new up search view theme
      */
-    protected void setupSearchViewTheme(SearchView searchView)
-    {
-        int id = searchView.getContext().getResources()
-                .getIdentifier("android:id/search_src_text", null, null);
-        EditText searchPlate = (EditText) searchView.findViewById(id);
-        searchPlate.setHintTextColor(getResources().getColor(R.color.white));
-//
-//        id = searchView.getContext().getResources()
-//                .getIdentifier("android:id/search_close_btn", null, null);
-//        ((ImageView) searchView.findViewById(id))
-//                .setImageResource(R.drawable.ic_close);
-//
-//        id = searchView.getContext().getResources()
-//                .getIdentifier("android:id/search_mag_icon", null, null);
-//        ((ImageView) searchView.findViewById(id))
-//                .setImageResource(R.drawable.ic_search_small);
-//
-//        id = searchView.getContext().getResources()
-//                .getIdentifier("android:id/search_plate", null, null);
-//        searchView.findViewById(id).setBackgroundResource(
-//                R.drawable.edittext_bg_white);
-        try
-        {
-            id = searchView.getContext().getResources()
-                    .getIdentifier("android:id/search_button", null, null);
-            ((ImageView) searchView.findViewById(id))
-                    .setImageResource(R.drawable.icon_search);
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
 
-    }
 
 }

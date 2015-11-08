@@ -2,8 +2,11 @@ package com.example.phuctruong.ezc.View;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.phuctruong.ezc.R;
 
@@ -13,6 +16,19 @@ public class RecipeDetailActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_rcp_detail);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
+        txt.setText("SETTING");
     }
 
     @Override

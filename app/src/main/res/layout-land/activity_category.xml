@@ -18,7 +18,7 @@
         android:divider="#e5e5e5"
         android:clipToPadding="false"
         android:focusable="false"
-        android:numColumns="2"
+        android:numColumns="3"
         android:focusableInTouchMode="false">
     </GridView>
 </LinearLayout>

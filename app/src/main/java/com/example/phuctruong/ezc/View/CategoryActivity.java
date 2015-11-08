@@ -1,13 +1,18 @@
 package com.example.phuctruong.ezc.View;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,7 +24,7 @@ import java.util.ArrayList;
 
 public class CategoryActivity extends ActionBarActivity {
 
-    ListView lw;
+    GridView grdv;
     ArrayList<Category> plist;
     ImageButton back;
 
@@ -32,18 +37,37 @@ public class CategoryActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("CATEGORY");
 
-        lw = (ListView) findViewById(R.id.grid);
+        grdv = (GridView) findViewById(R.id.grid);
         setUpView();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_category, menu);
-        return true;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_category, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
+
+        android.support.v7.widget.SearchView searchView = null;
+        if (searchItem != null) {
+            searchView = (android.support.v7.widget.SearchView) searchItem.getActionView();
+        }
+        if (searchView != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+        }
+        return super.onCreateOptionsMenu(menu);
     }
 
     private void loadData() {
@@ -60,7 +84,7 @@ public class CategoryActivity extends ActionBarActivity {
 
     public void setUpView() {
         loadData();
-        lw.setAdapter(new PlaceAdapter());
+        grdv.setAdapter(new PlaceAdapter());
     }
 
     public class PlaceAdapter extends BaseAdapter {

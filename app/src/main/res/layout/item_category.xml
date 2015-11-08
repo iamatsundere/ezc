@@ -1,71 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="72dp"
+    android:layout_height="192dp"
     android:orientation="horizontal">
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="72dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp">
-
-        <RelativeLayout
-            android:layout_width="0dip"
+        android:layout_height="192dp"
+        android:layout_margin="2dp">
+        <ImageView
+            android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="0.1"></RelativeLayout>
-
+            android:scaleType="center"
+            android:src="@drawable/img"/>
         <LinearLayout
-            android:layout_width="0dip"
+            android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="0.8"
-            android:background="@color/accentColor"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:background="#909E9E9E">
 
             <LinearLayout
                 android:id="@+id/item_recipe_img"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.7"
+                android:layout_weight="1.8"
                 android:orientation="horizontal"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img">
-
-                <RelativeLayout
-                    android:layout_width="0dip"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="0.15"></RelativeLayout>
-
-                <ImageView
-                    android:id="@+id/item_category_icon"
-                    android:layout_width="0dip"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="0.7"></ImageView>
-
-                <RelativeLayout
-                    android:layout_width="0dip"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="0.15"></RelativeLayout>
-
+                android:scaleType="fitCenter">
             </LinearLayout>
-
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_temp"/>
             <TextView
                 android:id="@+id/item_category_name"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="0.2"
-                android:gravity="left|center_vertical"
+                android:paddingTop="4dp"
+                android:layout_weight="1.7"
+                android:gravity="top|center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img"
                 android:text="AaBbCcDd"
-                android:textColor="#000"
-                android:textSize="@dimen/abc_text_size_headline_material" />
+                android:textStyle="bold"
+                android:textColor="@color/textSubColor"
+                android:textSize="@dimen/abc_text_size_large_material"/>
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.1"></RelativeLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

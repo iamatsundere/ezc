@@ -1,12 +1,16 @@
 package com.example.phuctruong.ezc.View;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.Adapter.AlphabetRecyclerAdapter;
@@ -30,13 +34,19 @@ public class RecipeActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("RECIPES");
 
-        RecyclerView rcv_alphabets = (RecyclerView) findViewById(R.id.rcv_alphabets);
-        rcv_alphabets.setLayoutManager(new LinearLayoutManager(this));
-        AlphabetRecyclerAdapter alphabetRecyclerAdapter = new AlphabetRecyclerAdapter(getLettersList(), this);
-        rcv_alphabets.setAdapter(alphabetRecyclerAdapter);
+//        RecyclerView rcv_alphabets = (RecyclerView) findViewById(R.id.rcv_alphabets);
+//        rcv_alphabets.setLayoutManager(new LinearLayoutManager(this));
+//        AlphabetRecyclerAdapter alphabetRecyclerAdapter = new AlphabetRecyclerAdapter(getLettersList(), this);
+//        rcv_alphabets.setAdapter(alphabetRecyclerAdapter);
 //
         RecyclerView rec_recipes = (RecyclerView) findViewById(R.id.rcv_recipes);
         rec_recipes.setLayoutManager(new LinearLayoutManager(this));
@@ -74,8 +84,21 @@ public class RecipeActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_recipe, menu);
-        return true;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_recipe, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
+
+        android.support.v7.widget.SearchView searchView = null;
+        if (searchItem != null) {
+            searchView = (android.support.v7.widget.SearchView) searchItem.getActionView();
+        }
+        if (searchView != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
+        }
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

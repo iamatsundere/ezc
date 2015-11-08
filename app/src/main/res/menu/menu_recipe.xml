@@ -4,10 +4,11 @@
     tools:context="com.example.phuctruong.ezc.View.RecipeActivity">
     <item
         android:id="@+id/action_search"
-        android:title="@string/action_search"
-        app:showAsAction="collapseActionView|ifRoom"
         android:icon="@drawable/icon_search"
-        android:actionViewClass="android.support.v7.widget.SearchView" />
+        android:orderInCategory="1"
+        android:title="@string/action_settings"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
     <item
         android:id="@+id/action_filter"
         android:orderInCategory="100"
