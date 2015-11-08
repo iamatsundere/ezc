@@ -6,7 +6,6 @@
     android:layout_height="96dp"
     android:orientation="horizontal"
     card_view:cardBackgroundColor="@android:color/transparent"
-<<<<<<< HEAD
     card_view:cardCornerRadius="2dp"
     card_view:cardElevation="0dp"
     android:layout_marginBottom="8dp"
@@ -22,37 +21,15 @@
             <!--android:layout_width="0dip"-->
             <!--android:layout_height="fill_parent"-->
             <!--android:layout_weight="0.1"></RelativeLayout>-->
-=======
-    card_view:cardCornerRadius="0dp"
-    card_view:cardElevation="0dp">
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="96dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp">
-
-        <RelativeLayout
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.1"></RelativeLayout>
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
 
         <LinearLayout
             android:background="@color/accentColorTransparent"
             android:layout_width="fill_parent"
-<<<<<<< HEAD
             android:layout_height="96dp"
             android:layout_weight="0.8"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
             android:orientation="horizontal">
-=======
-            android:layout_height="fill_parent"
-            android:layout_weight="0.8"
-            android:orientation="horizontal"
-            android:padding="4dp">
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
 
             <ImageView
                 android:id="@+id/item_recipe_img"
@@ -65,27 +42,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
-<<<<<<< HEAD
                 android:padding="4dp"
-=======
-                android:paddingLeft="4dp"
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/item_recipe_name"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:text="AaBbCcDd"
-<<<<<<< HEAD
                     android:layout_weight="2"
-=======
-                    android:layout_weight="1"
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
                     android:layout_marginBottom="4dp"
                     android:textColor="@color/primaryColor"
                     android:textSize="@dimen/abc_text_size_headline_material" />
                 <TextView
-<<<<<<< HEAD
                     android:id="@+id/item_recipe_content"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
@@ -93,31 +61,14 @@
                     android:layout_weight="1"
                     android:textColor="#000"
                     android:textSize="@dimen/abc_text_size_body_2_material"/>
-=======
-                    android:layout_width="fill_parent"
-                    android:layout_height="64dp"
-                    android:text="The parameter to the MatrixCursor constructor is an array of strings that define the order and the names of the columns in the cursor. Important: Make sure to add an "_id" column, without it the MatrixColumn will throw an exception and fail to work!"
-                    android:layout_weight="1"
-                    android:textColor="#000"
-                    android:textSize="@dimen/abc_text_size_medium_material" />
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
             </LinearLayout>
 
         </LinearLayout>
 
-<<<<<<< HEAD
         <!--<RelativeLayout-->
             <!--android:layout_width="0dip"-->
             <!--android:layout_height="96dp"-->
             <!--android:layout_weight="0.1"></RelativeLayout>-->
 
     <!--</LinearLayout>-->
-=======
-        <RelativeLayout
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.1"></RelativeLayout>
-
-    </LinearLayout>
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
 </android.support.v7.widget.CardView>

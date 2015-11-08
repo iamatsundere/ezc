@@ -5,11 +5,7 @@
     android:orientation="horizontal">
     <RelativeLayout
         android:layout_width="fill_parent"
-<<<<<<< HEAD
         android:layout_height="192dp"
-=======
-        android:layout_height="fill_parent"
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
         android:layout_margin="2dp">
         <ImageView
             android:layout_width="fill_parent"
@@ -20,11 +16,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical"
-<<<<<<< HEAD
             android:background="#909E9E9E">
-=======
-            android:background="@color/primaryColorTransparent">
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
 
             <LinearLayout
                 android:id="@+id/item_recipe_img"
@@ -39,12 +31,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
-<<<<<<< HEAD
                 android:scaleType="fitCenter"
                 android:src="@drawable/icon_temp"/>
-=======
-                android:src="@drawable/icon_search"/>
->>>>>>> e7770223be41f7e2c7b793bb698ccbde3930a36a
             <TextView
                 android:id="@+id/item_category_name"
                 android:layout_width="fill_parent"
