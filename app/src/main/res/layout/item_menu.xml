@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_menu_layout"
     android:layout_width="fill_parent"
     android:layout_height="80dp"
+    android:onClick="onMenuItemClick"
     android:orientation="horizontal">
 
     <RelativeLayout
@@ -10,12 +12,14 @@
         android:layout_weight=".1"></RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/item_menu_parent"
         android:layout_width="0dip"
         android:layout_height="80dp"
-        android:layout_weight=".8"
-        android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight=".8"
         android:background="@color/accentColor"
+        android:onClick="onMenuItemClick"
         android:orientation="vertical">
 
         <TextView
@@ -25,6 +29,7 @@
             android:layout_marginLeft="8px"
             android:layout_weight=".45"
             android:gravity="center_vertical"
+            android:onClick="onMenuItemClick"
             android:text="MENU"
             android:textColor="@color/primaryColor"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
@@ -42,6 +47,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="left|center_vertical"
+                android:onClick="onMenuItemClick"
                 android:text="120,000VND"
                 android:textColor="@color/textMainColor"
                 android:textSize="@dimen/abc_text_size_medium_material" />
@@ -55,6 +61,7 @@
                 android:layout_marginRight="8px"
                 android:layout_weight="1"
                 android:gravity="right|center_vertical"
+                android:onClick="onMenuItemClick"
                 android:text="12"
                 android:textColor="@color/primaryColor"
                 android:textStyle="bold" />
@@ -67,7 +74,8 @@
                 android:layout_marginRight="8px"
                 android:layout_toLeftOf="@id/menu_qty_people_content"
                 android:layout_weight="1"
-                android:src="@drawable/icon_people"/>
+                android:onClick="onMenuItemClick"
+                android:src="@drawable/icon_people" />
 
             <TextView
                 android:id="@+id/menu_qty_recipe_content"
@@ -78,6 +86,7 @@
                 android:layout_toLeftOf="@id/menu_qty_people_icon"
                 android:layout_weight="1"
                 android:gravity="right|center_vertical"
+                android:onClick="onMenuItemClick"
                 android:text="12"
                 android:textColor="@color/primaryColor"
                 android:textStyle="bold" />
@@ -90,6 +99,7 @@
                 android:layout_marginRight="8px"
                 android:layout_toLeftOf="@id/menu_qty_recipe_content"
                 android:layout_weight="1"
+                android:onClick="onMenuItemClick"
                 android:src="@drawable/icon_dish" />
         </RelativeLayout>
     </LinearLayout>

@@ -24,7 +24,7 @@ public class MenuDetailActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_detail);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_catgr);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_menu);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

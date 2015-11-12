@@ -3,20 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="192dp"
     android:orientation="horizontal">
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="192dp"
         android:layout_margin="2dp">
+
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scaleType="center"
-            android:src="@drawable/img"/>
+            android:src="@drawable/img" />
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:background="#909E9E9E">
+            android:background="#909E9E9E"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/item_recipe_img"
@@ -24,27 +27,28 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1.8"
                 android:orientation="horizontal"
-                android:scaleType="fitCenter">
-            </LinearLayout>
+                android:scaleType="fitCenter"></LinearLayout>
+
             <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
                 android:layout_margin="4dp"
+                android:layout_weight="1"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_temp"/>
+                android:src="@drawable/icon_temp" />
+
             <TextView
                 android:id="@+id/item_category_name"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:paddingTop="4dp"
                 android:layout_weight="1.7"
                 android:gravity="top|center_horizontal"
+                android:paddingTop="4dp"
                 android:scaleType="centerCrop"
                 android:text="AaBbCcDd"
-                android:textStyle="bold"
                 android:textColor="@color/textSubColor"
-                android:textSize="@dimen/abc_text_size_large_material"/>
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </RelativeLayout>

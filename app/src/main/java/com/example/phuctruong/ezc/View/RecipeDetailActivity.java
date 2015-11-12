@@ -11,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.R;
+import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
+import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
+import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
+import com.nineoldandroids.view.ViewHelper;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
-public class RecipeDetailActivity extends ActionBarActivity {
+public class RecipeDetailActivity extends ActionBarActivity implements ObservableScrollViewCallbacks {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,36 @@ public class RecipeDetailActivity extends ActionBarActivity {
         Drawable d = getResources().getDrawable(R.drawable.selector_flt_btn);
         actionButton.setBackground(d);
         actionButton.setElevation(.9f);
+
+        //bonus
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        mImageView = findViewById(R.id.image);
+        mToolbarView = findViewById(R.id.toolbar);
+        mToolbarView.setBackgroundColor(ScrollUtils.getColorWithAlpha(0, getResources().getColor(R.color.theme_dialer_primary)));
+
+        mScrollView = (ObservableScrollView) findViewById(R.id.scroll);
+        mScrollView.setScrollViewCallbacks(this);
+
+        mParallaxImageHeight = getResources().getDimensionPixelSize(R.dimen.drawer_menu_width);
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        onScrollChanged(mScrollView.getCurrentScrollY(), false, false);
+    }
+
+    @Override
+    public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+        int baseColor = getResources().getColor(R.color.theme_dialer_primary);
+        float alpha = 1 - (float) Math.max(0, mParallaxImageHeight - scrollY) / mParallaxImageHeight;
+        mToolbarView.setBackgroundColor(ScrollUtils.getColorWithAlpha(alpha, baseColor));
+        ViewHelper.setTranslationY(mImageView, scrollY / 2);
     }
 
     @Override

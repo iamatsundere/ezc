@@ -1,14 +1,18 @@
 package com.example.phuctruong.ezc.View;
 
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -91,6 +95,12 @@ public class MenuActivity extends ActionBarActivity {
         lw.setAdapter(new PlaceAdapter());
     }
 
+    public void onMenuItemClick(View view) {
+        Log.e("12123123", view.getId() + "");
+        Intent intent = new Intent(getApplicationContext(),MenuDetailActivity.class);
+        startActivity(intent);
+    }
+
     public class PlaceAdapter extends BaseAdapter {
         /* (non-Javadoc)
          * @see android.widget.Adapter#getCount()
@@ -131,26 +141,32 @@ public class MenuActivity extends ActionBarActivity {
             if (v == null)
                 v = getLayoutInflater().inflate(R.layout.item_menu, null);
 
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), MenuDetailActivity.class);
-                    startActivity(intent);
-                }
-            });
+//            View.OnTouchListener listener=new View.OnTouchListener() {
+//                @Override
+//                public boolean onTouch(View v, MotionEvent event) {
+//                    Intent intent=new Intent(getApplicationContext(),MenuDetailActivity.class);
+//                    startActivity(intent);
+//                    return true;
+//                }
+//            };
+
             MenuObject td = getItem(position);
 
             TextView tw1 = (TextView) v.findViewById(R.id.menu_name);
             tw1.setText(td.getName());
+//            tw1.setOnTouchListener(listener);
 
             TextView tw2 = (TextView) v.findViewById(R.id.menu_price);
             tw2.setText(td.getPrice());
+//            tw2.setOnTouchListener(listener);
 
             TextView tw3 = (TextView) v.findViewById(R.id.menu_qty_recipe_content);
             tw3.setText(td.getQtyRecipe() + "");
+//            tw3.setOnTouchListener(listener);
 ////
             TextView tw4 = (TextView) v.findViewById(R.id.menu_qty_people_content);
             tw4.setText(td.getQtyAttendance() + "");
+//            tw4.setOnTouchListener(listener);
 
             return v;
         }

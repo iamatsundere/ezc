@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.phuctruong.ezc.MainActivity"
     android:background="@color/primaryColor"
     android:gravity="center"
+    android:orientation="horizontal"
     android:paddingBottom="48dp"
     android:paddingTop="48dp"
-    android:orientation="horizontal">
+    tools:context="com.example.phuctruong.ezc.MainActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -26,31 +26,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1">
+
                 <ImageView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_ring">
-                </ImageView>
+                    android:src="@drawable/icon_ring"></ImageView>
+
                 <ImageView
-                    android:layout_marginTop="32dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:layout_marginBottom="32dp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_marginTop="32dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_food">
-                </ImageView>
+                    android:src="@drawable/icon_food"></ImageView>
             </RelativeLayout>
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:gravity="center|top"
-                android:textSize="@dimen/abc_text_size_large_material"
+                android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:gravity="center|top"
                 android:text="CATEGORY"
-                android:textColor="@color/textSubColor" />
+                android:textColor="@color/textSubColor"
+                android:textSize="@dimen/abc_text_size_large_material" />
 
         </LinearLayout>
 
@@ -65,31 +65,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1">
+
                 <ImageView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_ring">
-                </ImageView>
+                    android:src="@drawable/icon_ring"></ImageView>
+
                 <ImageView
-                    android:layout_marginTop="32dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:layout_marginBottom="32dp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_marginTop="32dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_price">
-                </ImageView>
+                    android:src="@drawable/icon_price"></ImageView>
             </RelativeLayout>
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:gravity="center|top"
-                android:textSize="@dimen/abc_text_size_large_material"
+                android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:gravity="center|top"
                 android:text="PRICE"
-                android:textColor="@color/textSubColor" />
+                android:textColor="@color/textSubColor"
+                android:textSize="@dimen/abc_text_size_large_material" />
 
         </LinearLayout>
     </LinearLayout>
@@ -99,8 +99,9 @@
         android:layout_height="fill_parent"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:weightSum="2"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="2">
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -112,31 +113,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1">
+
                 <ImageView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_ring">
-                </ImageView>
+                    android:src="@drawable/icon_ring"></ImageView>
+
                 <ImageView
-                    android:layout_marginTop="32dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:layout_marginBottom="32dp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_marginTop="32dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_menu">
-                </ImageView>
+                    android:src="@drawable/icon_menu"></ImageView>
             </RelativeLayout>
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:gravity="center|top"
-                android:textSize="@dimen/abc_text_size_large_material"
+                android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:gravity="center|top"
                 android:text="MENU"
-                android:textColor="@color/textSubColor" />
+                android:textColor="@color/textSubColor"
+                android:textSize="@dimen/abc_text_size_large_material" />
 
         </LinearLayout>
 
@@ -151,31 +152,31 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1">
+
                 <ImageView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_ring">
-                </ImageView>
+                    android:src="@drawable/icon_ring"></ImageView>
+
                 <ImageView
-                    android:layout_marginTop="32dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:layout_marginBottom="32dp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_marginTop="32dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_setting">
-                </ImageView>
+                    android:src="@drawable/icon_setting"></ImageView>
             </RelativeLayout>
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:gravity="center|top"
-                android:textSize="@dimen/abc_text_size_large_material"
+                android:layout_marginTop="16dp"
                 android:layout_weight="1"
+                android:gravity="center|top"
                 android:text="SETTING"
-                android:textColor="@color/textSubColor" />
+                android:textColor="@color/textSubColor"
+                android:textSize="@dimen/abc_text_size_large_material" />
 
         </LinearLayout>
     </LinearLayout>

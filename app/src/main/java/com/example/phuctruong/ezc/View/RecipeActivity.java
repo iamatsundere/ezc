@@ -1,9 +1,12 @@
 package com.example.phuctruong.ezc.View;
 
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -79,6 +82,13 @@ public class RecipeActivity extends ActionBarActivity {
                 recipeList.add(rObject);
             }
         return recipeList;
+    }
+
+
+
+    public void OnRecipeClick(View view) {
+        Intent intent = new Intent(getApplicationContext(),RecipeDetailActivity.class);
+        startActivity(intent);
     }
 
     @Override

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/backgroundLight">
+    android:background="@color/backgroundLight"
+    android:orientation="vertical">
+
     <include
         android:id="@+id/appbar_catgr"
-        layout="@layout/appbar"/>
+        layout="@layout/appbar" />
+
     <GridView
-        android:layout_below="@id/appbar_catgr"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
         android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="#e5e5e5"
+        android:layout_below="@id/appbar_catgr"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
         android:clipToPadding="false"
+        android:divider="#e5e5e5"
         android:focusable="false"
-        android:numColumns="2"
-        android:focusableInTouchMode="false">
-    </GridView>
+        android:focusableInTouchMode="false"
+        android:numColumns="2"></GridView>
 </LinearLayout>

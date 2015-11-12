@@ -16,18 +16,16 @@
         android:layout_below="@id/appbar_price"
         android:layout_marginTop="8dp">
 
-        <android.support.v7.widget.RecyclerView
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/rcv_alphabets"
-            android:layout_gravity="center"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight=".85">
 
         </android.support.v7.widget.RecyclerView>
 
-        <android.support.v7.widget.RecyclerView
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/rcv_ingredients"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
