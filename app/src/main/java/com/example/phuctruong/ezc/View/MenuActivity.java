@@ -2,9 +2,9 @@ package com.example.phuctruong.ezc.View;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,13 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.Model.MenuObject;
 import com.example.phuctruong.ezc.R;
-import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -26,9 +24,9 @@ public class MenuActivity extends ActionBarActivity {
 
     ListView lw;
     ArrayList<MenuObject> plist;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
@@ -44,16 +42,6 @@ public class MenuActivity extends ActionBarActivity {
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("MENU");
-
-        ImageView icon = new ImageView(this); // Create an icon
-        icon.setImageResource(R.drawable.icon_setting);
-
-        FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
-                .setContentView(icon)
-                .build();
-        Drawable d = getResources().getDrawable(R.drawable.selector_flt_btn);
-        actionButton.setBackground(d);
-        actionButton.setElevation(.9f);
 
         lw = (ListView) findViewById(R.id.lsvMenu);
         setUpView();
@@ -79,44 +67,41 @@ public class MenuActivity extends ActionBarActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void loadData()
-    {
-        ArrayList<MenuObject> l=new ArrayList<MenuObject>();
-        l.add(new MenuObject("MENU X","120,250",16,18));
-        l.add(new MenuObject("MENU Y","250,000",6,8));
-        l.add(new MenuObject("MENU YX","250,000",12,8));
-        l.add(new MenuObject("MENU AA","250,000",6,9));
-        l.add(new MenuObject("MENU A","50,000",6,10));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        l.add(new MenuObject("MENU B","1,020,000",10,8));
-        plist= new ArrayList<MenuObject>();
+    private void loadData() {
+        ArrayList<MenuObject> l = new ArrayList<MenuObject>();
+        l.add(new MenuObject("MENU X", "120,250", 16, 18));
+        l.add(new MenuObject("MENU Y", "250,000", 6, 8));
+        l.add(new MenuObject("MENU YX", "250,000", 12, 8));
+        l.add(new MenuObject("MENU AA", "250,000", 6, 9));
+        l.add(new MenuObject("MENU A", "50,000", 6, 10));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        l.add(new MenuObject("MENU B", "1,020,000", 10, 8));
+        plist = new ArrayList<MenuObject>();
         plist.addAll(l);
     }
-    public void setUpView()
-    {
+
+    public void setUpView() {
         loadData();
         lw.setAdapter(new PlaceAdapter());
     }
 
-    public class PlaceAdapter extends BaseAdapter
-    {
+    public class PlaceAdapter extends BaseAdapter {
         /* (non-Javadoc)
          * @see android.widget.Adapter#getCount()
          */
-        public PlaceAdapter()
-        {
+        public PlaceAdapter() {
             super();
         }
+
         @Override
 
-        public int getCount()
-        {
+        public int getCount() {
             return plist.size();
         }
 
@@ -124,8 +109,7 @@ public class MenuActivity extends ActionBarActivity {
          * @see android.widget.Adapter#getItem(int)
          */
         @Override
-        public MenuObject getItem(int arg0)
-        {
+        public MenuObject getItem(int arg0) {
             return plist.get(arg0);
         }
 
@@ -133,21 +117,27 @@ public class MenuActivity extends ActionBarActivity {
          * @see android.widget.Adapter#getItemId(int)
          */
         @Override
-        public long getItemId(int arg0)
-        {
+        public long getItemId(int arg0) {
             return arg0;
         }
 
 		/* (non-Javadoc)
-		 * @see android.widget.Adapter#getView(int, android.view.View, android.view.ViewGroup)
+         * @see android.widget.Adapter#getView(int, android.view.View, android.view.ViewGroup)
 		 */
 
         @Override
         public View getView(int position, View v, ViewGroup parent) {
             // TODO Auto-generated method stub
-            if(v == null)
-                v=getLayoutInflater().inflate(R.layout.item_menu,null);
+            if (v == null)
+                v = getLayoutInflater().inflate(R.layout.item_menu, null);
 
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), MenuDetailActivity.class);
+                    startActivity(intent);
+                }
+            });
             MenuObject td = getItem(position);
 
             TextView tw1 = (TextView) v.findViewById(R.id.menu_name);
@@ -157,10 +147,10 @@ public class MenuActivity extends ActionBarActivity {
             tw2.setText(td.getPrice());
 
             TextView tw3 = (TextView) v.findViewById(R.id.menu_qty_recipe_content);
-            tw3.setText(td.getQtyRecipe()+"");
+            tw3.setText(td.getQtyRecipe() + "");
 ////
             TextView tw4 = (TextView) v.findViewById(R.id.menu_qty_people_content);
-            tw4.setText(td.getQtyAttendance()+"");
+            tw4.setText(td.getQtyAttendance() + "");
 
             return v;
         }

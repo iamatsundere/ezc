@@ -23,7 +23,7 @@
         <activity
             android:name=".View.SettingActivity"
             android:label="@string/title_activity_setting"
-            android:theme="@style/AppTheme.Base">
+            android:theme="@style/AppTheme.Base" >
         </activity>
         <activity
             android:name=".View.MenuActivity"
@@ -32,7 +32,8 @@
         <activity
             android:name=".View.PriceActivity"
             android:label="@string/title_activity_price" >
-            <meta-data android:name="android.app.searchable"
+            <meta-data
+                android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
         <activity

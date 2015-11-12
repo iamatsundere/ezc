@@ -1,6 +1,7 @@
 package com.example.phuctruong.ezc.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.phuctruong.ezc.Model.Recipe;
 import com.example.phuctruong.ezc.R;
+import com.example.phuctruong.ezc.View.RecipeActivity;
 import com.example.phuctruong.ezc.ViewHolder.RecipeVH;
 
 import java.util.Collections;

@@ -1,14 +1,17 @@
 package com.example.phuctruong.ezc.View;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.R;
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 public class RecipeDetailActivity extends ActionBarActivity {
 
@@ -29,6 +32,16 @@ public class RecipeDetailActivity extends ActionBarActivity {
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("SETTING");
+
+        ImageView icon = new ImageView(this); // Create an icon
+        icon.setImageResource(R.drawable.icon_setting);
+
+        FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
+                .setContentView(icon)
+                .build();
+        Drawable d = getResources().getDrawable(R.drawable.selector_flt_btn);
+        actionButton.setBackground(d);
+        actionButton.setElevation(.9f);
     }
 
     @Override
