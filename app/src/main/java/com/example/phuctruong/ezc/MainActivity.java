@@ -12,7 +12,9 @@ import com.example.phuctruong.ezc.View.CategoryActivity;
 import com.example.phuctruong.ezc.View.MenuActivity;
 import com.example.phuctruong.ezc.View.PriceActivity;
 import com.example.phuctruong.ezc.View.SettingActivity;
-
+/**
+ * Created by Phuc Truong on 10/17/2015.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RelativeLayout btnCategory,btnMenu,btnSetting,btnPrice;
