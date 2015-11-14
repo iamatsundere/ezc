@@ -96,7 +96,8 @@
             android:layout_weight="1"
             android:background="@color/primaryColor"
             android:orientation="horizontal"
-            android:textColor="@color/white">
+            android:textColor="@color/white"
+            android:onClick="onMenuTabChanged">
 
             <ImageView
                 android:layout_width="fill_parent"

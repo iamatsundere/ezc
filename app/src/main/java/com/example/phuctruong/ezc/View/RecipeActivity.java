@@ -46,11 +46,6 @@ public class RecipeActivity extends ActionBarActivity {
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("RECIPES");
 
-//        RecyclerView rcv_alphabets = (RecyclerView) findViewById(R.id.rcv_alphabets);
-//        rcv_alphabets.setLayoutManager(new LinearLayoutManager(this));
-//        AlphabetRecyclerAdapter alphabetRecyclerAdapter = new AlphabetRecyclerAdapter(getLettersList(), this);
-//        rcv_alphabets.setAdapter(alphabetRecyclerAdapter);
-//
         RecyclerView rec_recipes = (RecyclerView) findViewById(R.id.rcv_recipes);
         rec_recipes.setLayoutManager(new LinearLayoutManager(this));
         RecipeRecyclerAdapter recipeRecyclerAdapter = new RecipeRecyclerAdapter(getRecipeData(), this);

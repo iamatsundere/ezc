@@ -10,17 +10,7 @@
     card_view:cardBackgroundColor="@android:color/transparent"
     card_view:cardCornerRadius="2dp"
     card_view:cardElevation="0dp">
-
-    <!--<LinearLayout-->
-    <!--android:layout_width="fill_parent"-->
-    <!--android:layout_height="96dp"-->
-    <!--android:layout_marginBottom="4dp"-->
-    <!--android:layout_marginTop="4dp">-->
-
-    <!--<RelativeLayout-->
-    <!--android:layout_width="0dip"-->
-    <!--android:layout_height="fill_parent"-->
-    <!--android:layout_weight="0.1"></RelativeLayout>-->
+    
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -46,13 +36,13 @@
             android:layout_weight="1"
             android:onClick="OnRecipeClick"
             android:orientation="vertical"
-            android:padding="4dp">
+            android:padding="2dp">
 
             <TextView
                 android:id="@+id/item_recipe_name"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_marginBottom="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="2"
                 android:onClick="OnRecipeClick"
                 android:text="AaBbCcDd"
@@ -71,11 +61,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <!--<RelativeLayout-->
-    <!--android:layout_width="0dip"-->
-    <!--android:layout_height="96dp"-->
-    <!--android:layout_weight="0.1"></RelativeLayout>-->
-
-    <!--</LinearLayout>-->
 </android.support.v7.widget.CardView>

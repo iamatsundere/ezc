@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.phuctruong.ezc.View.RecipeDetailActivity">
 
+
     <include
         android:id="@+id/appbar_rcp_detail"
         layout="@layout/appbar" />
@@ -24,75 +25,91 @@
                 android:layout_height="256dp"
                 android:layout_marginBottom="8dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img2"/>
+                android:src="@drawable/img2" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
                 android:id="@+id/txt_introduce_heading"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/img_recipe"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
                 android:text="THÔNG TIN"
                 android:textColor="@color/primaryColorDark"
                 android:textSize="@dimen/abc_text_size_headline_material" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
                 android:id="@+id/txt_introduce_content"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@id/txt_introduce_heading"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
                 android:text="Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales, vestibulum nisl primis a molestie vestibulum quam, sapien mauris metus risus suspendisse magnis. Augue viverra nulla fau"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/abc_text_size_medium_material" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
                 android:id="@+id/txt_ingredient_heading"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@id/txt_introduce_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
                 android:text="NGUYÊN LIỆU"
                 android:textColor="@color/primaryColorDark"
                 android:textSize="@dimen/abc_text_size_headline_material" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
                 android:id="@+id/txt_ingredient_content"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@id/txt_ingredient_heading"
-                android:textColor="@android:color/black"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
                 android:text="Cải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram\nCải xoong              10 gram"
+                android:textColor="@android:color/black"
                 android:textSize="@dimen/abc_text_size_medium_material" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
                 android:id="@+id/txt_detail_heading"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_below="@id/txt_ingredient_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
                 android:text="BƯỚC LÀM"
                 android:textColor="@color/primaryColorDark"
                 android:textSize="@dimen/abc_text_size_headline_material" />
 
             <TextView
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"
                 android:id="@+id/txt_detail_content"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="Bước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\n"
                 android:layout_below="@id/txt_detail_heading"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Bước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\nBước 1:Lorem ipsum dolor sit amet, ut duis lorem provident sed felis blandit, condimentum donec lectus ipsum et mauris, morbi porttitor interdum feugiat nulla donec sodales\n"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/abc_text_size_medium_material" />
 
         </RelativeLayout>
     </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="4dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_menu" />
+    </LinearLayout>
 
 </RelativeLayout>
