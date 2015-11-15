@@ -17,24 +17,42 @@
         android:layout_height="80dp"
         android:layout_marginBottom="2dp"
         android:layout_marginTop="2dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:paddingBottom="4dp"
         android:layout_weight=".8"
         android:background="@color/accentColor"
         android:onClick="onMenuItemClick"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
 
-        <TextView
-            android:id="@+id/menu_name"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight=".45"
-            android:gravity="center_vertical"
-            android:onClick="onMenuItemClick"
-            android:text="MENU"
-            android:textColor="@color/primaryColor"
-            android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
+            android:layout_weight=".45">
+
+            <TextView
+                android:id="@+id/menu_name"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:onClick="onMenuItemClick"
+                android:text="MENU"
+                android:layout_weight="1"
+                android:textColor="@color/primaryColor"
+                android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
+
+            <TextView
+                android:id="@+id/menu_date_create"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:onClick="onMenuItemClick"
+                android:text="18/01/2015"
+                android:textColor="@color/primaryColor"
+                android:textSize="@dimen/abc_text_size_medium_material" />
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="fill_parent"

@@ -27,11 +27,12 @@
         <ImageView
             android:id="@+id/icon_number_recipe"
             android:layout_width="64dp"
-            android:layout_marginRight="56dp"
-            android:layout_alignParentRight="true"
             android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
             android:layout_marginBottom="12dp"
+            android:layout_marginRight="56dp"
             android:layout_marginTop="12dp"
+            android:onClick="GoToMenuDetail"
             android:scaleType="centerInside"
             android:src="@drawable/icon_menu" />
 
@@ -41,6 +42,7 @@
             android:layout_height="fill_parent"
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
+            android:onClick="GoToMenuDetail"
             android:scaleType="centerInside"
             android:src="@drawable/icon_menu"
             android:text="6"

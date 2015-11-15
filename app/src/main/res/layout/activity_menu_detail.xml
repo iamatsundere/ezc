@@ -20,6 +20,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2"
+            android:padding="8dp"
             android:gravity="center"
             android:onClick="onAdjustPeople">
 
@@ -27,8 +28,9 @@
                 android:id="@+id/btn_minus"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:gravity="center"
-                android:src="@drawable/icon_dish"
+                android:gravity="center|center_vertical"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_minus_people"
                 android:textColor="@color/primaryColorDark"
                 android:onClick="onAdjustPeople"/>
         </LinearLayout>
@@ -59,6 +61,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2"
+            android:padding="8dp"
             android:gravity="center"
             android:onClick="onAdjustPeople">
 
@@ -67,8 +70,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center"
-                android:src="@drawable/icon_people"
-                android:textColor="@color/primaryColorDark"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_add_people"
                 android:onClick="onAdjustPeople"/>
         </LinearLayout>
 

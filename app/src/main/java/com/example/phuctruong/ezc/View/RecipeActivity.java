@@ -44,7 +44,7 @@ public class RecipeActivity extends ActionBarActivity {
             }
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
-        txt.setText("DANH SÁCH THỰC ĐƠN");
+        txt.setText("DANH SÁCH MÓN ĂN");
 
         RecyclerView rec_recipes = (RecyclerView) findViewById(R.id.rcv_recipes);
         rec_recipes.setLayoutManager(new LinearLayoutManager(this));

@@ -1,5 +1,6 @@
 package com.example.phuctruong.ezc.View;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -76,6 +77,12 @@ public class RecipeDetailActivity extends ActionBarActivity implements Observabl
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         onScrollChanged(mScrollView.getCurrentScrollY(), false, false);
+    }
+
+    public void GoToMenuDetail(View v)
+    {
+        Intent intent=new Intent(getApplication(),MenuDetailActivity.class);
+        startActivity(intent);
     }
 
     @Override

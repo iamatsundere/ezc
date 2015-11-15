@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="icon_menu"
+	android:width="256px"
+	android:height="256px"
+	android:viewportHeight="400"
+	android:viewportWidth="400">
+	<path
+		android:name="back_button"
+		android:fillColor="@color/iconPrimaryColor"
+		android:pathData="M2.1,363.4c-4.2,9.9-1.9,21.3,5.7,28.9c7.6,7.6,19,9.8,28.9,5.7l96.7-40.5l-90.7-90.7L2.1,363.4z M2.1,363.4 M392.3,73.1L326.9,7.7c-10.3-10.3-27-10.3-37.4,0L66.8,230.4c-0.1,0.1-0.1,0.1-0.2,0.2l102.7,102.7c0.1-0.1,0.1-0.1,0.2-0.2
+	l222.7-222.7C402.6,100.2,402.6,83.4,392.3,73.1L392.3,73.1z M392.3,73.1"/>
+</vector>
+
