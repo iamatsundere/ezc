@@ -1,22 +1,20 @@
 package com.example.phuctruong.ezc.View;
 
-import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.Model.MenuObject;
@@ -45,10 +43,19 @@ public class MenuActivity extends ActionBarActivity {
             }
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
-        txt.setText("MENU");
+        txt.setText("DANH SÁCH THỰC ĐƠN");
 
         lw = (ListView) findViewById(R.id.lsvMenu);
         setUpView();
+
+        RelativeLayout revLayout = (RelativeLayout) findViewById(R.id.btn_add_menu);
+        revLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), CategoryActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -97,7 +104,7 @@ public class MenuActivity extends ActionBarActivity {
 
     public void onMenuItemClick(View view) {
         Log.e("12123123", view.getId() + "");
-        Intent intent = new Intent(getApplicationContext(),MenuDetailActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MenuDetailActivity.class);
         startActivity(intent);
     }
 

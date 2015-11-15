@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/primaryColor"
+    android:elevation="2dp"
+    android:theme="@style/MyCustomToolbarTheme">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/app_bar_title"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="8dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:text="TAY-TAY"
+            android:textColor="@color/textSubColor"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/icon_number_recipe"
+            android:layout_width="64dp"
+            android:layout_marginRight="56dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_menu" />
+
+        <TextView
+            android:id="@+id/txt_number_recipe"
+            android:layout_width="64dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_menu"
+            android:text="6"
+            android:textColor="@color/textSubColor"
+            android:textSize="@dimen/abc_text_size_large_material" />
+
+    </RelativeLayout>
+</android.support.v7.widget.Toolbar>

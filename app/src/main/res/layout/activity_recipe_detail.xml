@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/appbar_rcp_detail"
-        layout="@layout/appbar" />
+        layout="@layout/appbar_recipe_detail" />
 
     <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
         android:id="@+id/scrv_rep_detail"
@@ -95,21 +95,5 @@
 
         </RelativeLayout>
     </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
-
-    <LinearLayout
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="4dp"
-        android:padding="8dp">
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="4dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/icon_menu" />
-    </LinearLayout>
 
 </RelativeLayout>

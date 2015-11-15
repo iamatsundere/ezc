@@ -43,7 +43,7 @@ public class PriceActivity extends ActionBarActivity {
             }
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
-        txt.setText("PRICE LIST");
+        txt.setText("GIÁ CẢ HÀNG HÓA");
 
 
         RecyclerView rcv_alphabets = (RecyclerView) findViewById(R.id.rcv_alphabets);

@@ -21,6 +21,7 @@
         android:focusableInTouchMode="false"></ListView>
 
     <RelativeLayout
+        android:id="@+id/btn_add_menu"
         android:layout_width="fill_parent"
         android:layout_height="72dp"
         android:background="@color/primaryColorTransparent"
@@ -36,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:gravity="center"
-            android:text="add menu"
+            android:text="thêm thực đơn"
             android:textColor="@color/textSubColor"
             android:textSize="@dimen/abc_text_size_large_material" />
     </RelativeLayout>

@@ -15,8 +15,11 @@
         android:id="@+id/item_menu_parent"
         android:layout_width="0dip"
         android:layout_height="80dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="4dp"
         android:layout_weight=".8"
         android:background="@color/accentColor"
         android:onClick="onMenuItemClick"
@@ -26,7 +29,6 @@
             android:id="@+id/menu_name"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="8px"
             android:layout_weight=".45"
             android:gravity="center_vertical"
             android:onClick="onMenuItemClick"
@@ -37,7 +39,6 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="8px"
             android:layout_weight=".6"
             android:orientation="horizontal">
 
@@ -54,21 +55,22 @@
 
             <TextView
                 android:id="@+id/menu_qty_people_content"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="fill_parent"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="8px"
                 android:layout_marginRight="8px"
                 android:layout_weight="1"
-                android:gravity="right|center_vertical"
+                android:gravity="center_vertical"
                 android:onClick="onMenuItemClick"
                 android:text="12"
                 android:textColor="@color/primaryColor"
+                android:textSize="@dimen/abc_text_size_medium_material"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/menu_qty_people_icon"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="8px"
                 android:layout_marginRight="8px"
@@ -79,21 +81,22 @@
 
             <TextView
                 android:id="@+id/menu_qty_recipe_content"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="8px"
                 android:layout_marginRight="8px"
                 android:layout_toLeftOf="@id/menu_qty_people_icon"
                 android:layout_weight="1"
-                android:gravity="right|center_vertical"
+                android:gravity="center_vertical"
                 android:onClick="onMenuItemClick"
                 android:text="12"
                 android:textColor="@color/primaryColor"
+                android:textSize="@dimen/abc_text_size_medium_material"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/menu_qty_recipe_icon"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="8px"
                 android:layout_marginRight="8px"

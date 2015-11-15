@@ -48,7 +48,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:gravity="center|top"
-                android:text="CATEGORY"
+                android:text="DANH MỤC"
                 android:textColor="@color/textSubColor"
                 android:textSize="@dimen/abc_text_size_large_material" />
 
@@ -87,7 +87,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:gravity="center|top"
-                android:text="PRICE"
+                android:text="GIÁ CẢ"
                 android:textColor="@color/textSubColor"
                 android:textSize="@dimen/abc_text_size_large_material" />
 
@@ -135,7 +135,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:gravity="center|top"
-                android:text="MENU"
+                android:text="THỰC ĐƠN"
                 android:textColor="@color/textSubColor"
                 android:textSize="@dimen/abc_text_size_large_material" />
 
@@ -174,7 +174,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
                 android:gravity="center|top"
-                android:text="SETTING"
+                android:text="CÀI ĐẶT"
                 android:textColor="@color/textSubColor"
                 android:textSize="@dimen/abc_text_size_large_material" />
 

@@ -8,13 +8,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.R;
-import com.example.phuctruong.ezc.View.MenuDetailTabs.mnu_detail_rcp;
 import com.example.phuctruong.ezc.View.MenuDetailTabs.mnu_detail_ingredient;
+import com.example.phuctruong.ezc.View.MenuDetailTabs.mnu_detail_rcp;
 
 public class MenuDetailActivity extends ActionBarActivity {
 
@@ -27,7 +28,7 @@ public class MenuDetailActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_detail);
 
-        page=(ViewPager) findViewById(R.id.pager);
+        page = (ViewPager) findViewById(R.id.pager);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_menu);
         setSupportActionBar(toolbar);
@@ -40,13 +41,24 @@ public class MenuDetailActivity extends ActionBarActivity {
             }
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
-        txt.setText("MENU X");
+        txt.setText("THỰC ĐƠN X");
         initTabs();
         initPager();
     }
 
+    public void onAdjustPeople(View v) {
+        TextView txt = (TextView) findViewById(R.id.txt_number_people);
+        Log.e("4564546", txt.getText().toString());
+        int n = Integer.parseInt(txt.getText().toString());
+        if (v.getId() == R.id.btn_minus)
+            n -= 1;
+        else if (v.getId() == R.id.btn_add)
+            n += 1;
+        txt.setText(n + "");
+    }
+
     public void OnRecipeClick(View view) {
-        Intent intent = new Intent(getApplicationContext(),RecipeDetailActivity.class);
+        Intent intent = new Intent(getApplicationContext(), RecipeDetailActivity.class);
         startActivity(intent);
     }
 
@@ -80,11 +92,18 @@ public class MenuDetailActivity extends ActionBarActivity {
 
     private void setCurrentTab(int page) {
         if (currentTab != null)
-            currentTab.setEnabled(true);
-        if (page == 0)
+            page = 0;
+        View tab_ingredient = findViewById(R.id.btn_ingredient_tab);
+        View tab_dish = findViewById(R.id.btn_dish_tab);
+        if (page == 0) {
             currentTab = findViewById(R.id.btn_dish_tab);
-        else if (page == 1)
+            tab_dish.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+            tab_ingredient.setBackgroundColor(getResources().getColor(R.color.primaryColorDark));
+        } else if (page == 1) {
             currentTab = findViewById(R.id.btn_ingredient_tab);
+            tab_ingredient.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+            tab_dish.setBackgroundColor(getResources().getColor(R.color.primaryColorDark));
+        }
         currentTab.setEnabled(false);
 
     }

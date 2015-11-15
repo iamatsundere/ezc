@@ -28,7 +28,7 @@ public class SettingActivity extends ActionBarActivity {
             }
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
-        txt.setText("SETTING");
+        txt.setText("CÀI ĐẶT");
     }
 
     @Override

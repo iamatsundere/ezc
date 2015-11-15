@@ -44,7 +44,7 @@ public class CategoryActivity extends ActionBarActivity {
             }
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
-        txt.setText("CATEGORY");
+        txt.setText("DANH MỤC");
 
         grdv = (GridView) findViewById(R.id.grid);
         setUpView();

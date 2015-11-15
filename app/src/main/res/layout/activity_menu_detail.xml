@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="48dp"
         android:background="@drawable/drop_shadow"
         android:paddingLeft="8dp"
         android:paddingRight="8dp">
@@ -20,15 +20,17 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2"
-            android:gravity="center">
+            android:gravity="center"
+            android:onClick="onAdjustPeople">
 
-            <TextView
+            <ImageView
+                android:id="@+id/btn_minus"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center"
-                android:text="-"
+                android:src="@drawable/icon_dish"
                 android:textColor="@color/primaryColorDark"
-                android:textSize="@dimen/abc_text_size_display_3_material" />
+                android:onClick="onAdjustPeople"/>
         </LinearLayout>
 
         <LinearLayout
@@ -38,34 +40,36 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/txt_number"
+                android:id="@+id/txt_number_people"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center"
                 android:text="4"
-                android:textSize="@dimen/abc_text_size_display_1_material" />
+                android:textSize="@dimen/abc_text_size_large_material" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center"
                 android:text=" NGƯỜI"
-                android:textSize="@dimen/abc_text_size_display_1_material" />
+                android:textSize="@dimen/abc_text_size_large_material" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2"
-            android:gravity="center">
+            android:gravity="center"
+            android:onClick="onAdjustPeople">
 
-            <TextView
+            <ImageView
+                android:id="@+id/btn_add"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center"
-                android:text="+"
+                android:src="@drawable/icon_people"
                 android:textColor="@color/primaryColorDark"
-                android:textSize="@dimen/abc_text_size_display_2_material" />
+                android:onClick="onAdjustPeople"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -78,7 +82,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="56dp"
         android:background="#acacac"
         android:gravity="center"
         android:text="12.223"
@@ -86,7 +90,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="56dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -103,7 +107,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="12dp"
-                android:src="@drawable/icon_ingredient_tab" />
+                android:src="@drawable/icon_dish_tab" />
         </LinearLayout>
 
         <LinearLayout
@@ -118,7 +122,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="12dp"
-                android:src="@drawable/icon_menu_tab" />
+                android:src="@drawable/icon_ingredient_tab" />
         </LinearLayout>
 
 
