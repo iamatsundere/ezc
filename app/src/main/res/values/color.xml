@@ -5,6 +5,7 @@
     <color name="accentColor">#ebebeb</color>
     <color name="primaryColorTransparent">#aa9d3737</color>
     <color name="accentColorTransparent">#ddebebeb</color>
+    <!--<color name="accentColorTransparent">#ddebebeb</color>-->
 
     <color name="textSubColor">#ffffff</color>
     <color name="textMainColor">#000000</color>

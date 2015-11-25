@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <include
-        android:id="@+id/appbar_menu"
+        android:id="@+id/appbar_menu_detail"
         layout="@layout/appbar" />
 
     <LinearLayout

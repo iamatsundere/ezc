@@ -46,10 +46,10 @@ public class PriceActivity extends ActionBarActivity {
         txt.setText("GIÁ CẢ HÀNG HÓA");
 
 
-        RecyclerView rcv_alphabets = (RecyclerView) findViewById(R.id.rcv_alphabets);
-        rcv_alphabets.setLayoutManager(new LinearLayoutManager(this));
-        AlphabetRecyclerAdapter alphabetRecyclerAdapter = new AlphabetRecyclerAdapter(getLettersList(), this);
-        rcv_alphabets.setAdapter(alphabetRecyclerAdapter);
+//        RecyclerView rcv_alphabets = (RecyclerView) findViewById(R.id.rcv_alphabets);
+//        rcv_alphabets.setLayoutManager(new LinearLayoutManager(this));
+//        AlphabetRecyclerAdapter alphabetRecyclerAdapter = new AlphabetRecyclerAdapter(getLettersList(), this);
+//        rcv_alphabets.setAdapter(alphabetRecyclerAdapter);
 
         RecyclerView rcv_ingredients = (RecyclerView) findViewById(R.id.rcv_ingredients);
         rcv_ingredients.setLayoutManager(new LinearLayoutManager(this));

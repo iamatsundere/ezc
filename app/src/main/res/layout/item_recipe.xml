@@ -9,26 +9,38 @@
     android:orientation="horizontal"
     card_view:cardBackgroundColor="@android:color/transparent"
     card_view:cardCornerRadius="2dp"
-    card_view:cardElevation="0dp">
-    
+    card_view:cardElevation="2dp">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="96dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:layout_weight="0.8"
+        android:layout_weight="1"
         android:background="@color/accentColorTransparent"
         android:onClick="OnRecipeClick"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/item_recipe_img"
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="2.5"
-            android:onClick="OnRecipeClick"
-            android:src="@drawable/img" />
+            android:layout_weight="2.5">
+
+            <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/item_recipe_img"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:onClick="OnRecipeClick"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"

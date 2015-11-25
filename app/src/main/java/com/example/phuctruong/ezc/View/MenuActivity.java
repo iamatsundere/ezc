@@ -1,8 +1,10 @@
 package com.example.phuctruong.ezc.View;
 
+import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -12,13 +14,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.Model.MenuObject;
 import com.example.phuctruong.ezc.R;
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -52,8 +58,33 @@ public class MenuActivity extends ActionBarActivity {
         revLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), CategoryActivity.class);
-                startActivity(intent);
+                // dailog đăng nhập
+                final Dialog dialog = new Dialog(MenuActivity.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // ẩn
+                // ttitle
+                dialog.setContentView(R.layout.dialog_menu);
+                dialog.show();
+                // button OK
+                final Button btnOK = (Button) dialog.findViewById(R.id.btn_dialog_ok);
+                btnOK.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplication(), CategoryActivity.class);
+                        startActivity(intent);
+
+                    }
+                });
+                // button cancel
+                final Button btnCancel = (Button) dialog.findViewById(R.id.btn_dialog_cancel);
+                btnCancel.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+
+                    }
+                });
             }
         });
     }

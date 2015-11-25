@@ -1,6 +1,9 @@
 package com.example.phuctruong.ezc.View;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,13 +12,18 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.R;
 import com.example.phuctruong.ezc.View.MenuDetailTabs.mnu_detail_ingredient;
 import com.example.phuctruong.ezc.View.MenuDetailTabs.mnu_detail_rcp;
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 
 public class MenuDetailActivity extends ActionBarActivity {
 
@@ -30,7 +38,7 @@ public class MenuDetailActivity extends ActionBarActivity {
 
         page = (ViewPager) findViewById(R.id.pager);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_menu);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_menu_detail);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -126,6 +134,14 @@ public class MenuDetailActivity extends ActionBarActivity {
             }
         });
         page.setAdapter(new DummyPageAdapter(getSupportFragmentManager()));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_menu_detail, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     /**
