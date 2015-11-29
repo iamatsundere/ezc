@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.Model.Category;
@@ -70,14 +70,15 @@ public class CategoryActivity extends ActionBarActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+
     private void loadData() {
         ArrayList<Category> l = new ArrayList<Category>();
-        l.add(new Category("BARBERCUE"));
-        l.add(new Category("SOUP"));
-        l.add(new Category("LẨU"));
-        l.add(new Category("XÀO"));
-        l.add(new Category("HẤP"));
-        l.add(new Category("LUỘC"));
+        l.add(new Category("NƯỚNG", R.id.image, R.id.icon_number_recipe));
+        l.add(new Category("SÚP", R.id.image, R.id.icon_number_recipe));
+        l.add(new Category("LẨU", R.id.image, R.id.icon_number_recipe));
+        l.add(new Category("XÀO", R.id.image, R.id.icon_number_recipe));
+        l.add(new Category("HẤP", R.id.image, R.id.icon_number_recipe));
+        l.add(new Category("LUỘC", R.id.image, R.id.icon_number_recipe));
         plist = new ArrayList<Category>();
         plist.addAll(l);
     }
@@ -136,6 +137,12 @@ public class CategoryActivity extends ActionBarActivity {
             Category l = getItem(position);
             TextView bt = (TextView) v.findViewById(R.id.item_category_name);
             bt.setText(l.getName());
+
+            ImageView img = (ImageView) v.findViewById(R.id.item_category_img);
+            img.setImageResource(l.getImage());
+
+            ImageView ic = (ImageView) v.findViewById(R.id.item_category_icon);
+            ic.setImageResource(l.getIcon());
             return v;
         }
 

@@ -51,15 +51,14 @@ public class PriceActivity extends ActionBarActivity {
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("GIÁ CẢ HÀNG HÓA");
 
+        PushContentToView(listI);
+    }
 
-//        RecyclerView rcv_alphabets = (RecyclerView) findViewById(R.id.rcv_alphabets);
-//        rcv_alphabets.setLayoutManager(new LinearLayoutManager(this));
-//        AlphabetRecyclerAdapter alphabetRecyclerAdapter = new AlphabetRecyclerAdapter(getLettersList(), this);
-//        rcv_alphabets.setAdapter(alphabetRecyclerAdapter);
-
+    public void PushContentToView(List<Ingredient> list)
+    {
         RecyclerView rcv_ingredients = (RecyclerView) findViewById(R.id.rcv_ingredients);
         rcv_ingredients.setLayoutManager(new LinearLayoutManager(this));
-        IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(listI, this);
+        IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(list, this);
         rcv_ingredients.setAdapter(ingredientRecylerAdapter);
     }
 
@@ -109,11 +108,7 @@ public class PriceActivity extends ActionBarActivity {
                 for (Ingredient i : listI)
                     if (i.getName().contains(query))
                         listIT.add(i);
-                RecyclerView rcv_ingredients = (RecyclerView) findViewById(R.id.rcv_ingredients);
-                rcv_ingredients.setLayoutManager(new LinearLayoutManager(context));
-                rcv_ingredients.removeAllViews();
-                IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(listIT, context);
-                rcv_ingredients.setAdapter(ingredientRecylerAdapter);
+                PushContentToView(listIT);
                 return false;
             }
 
@@ -121,11 +116,7 @@ public class PriceActivity extends ActionBarActivity {
             public boolean onQueryTextChange(String newText) {
                 if (newText.compareTo("") == 0) {
                     listIT = listI;
-                    RecyclerView rcv_ingredients = (RecyclerView) findViewById(R.id.rcv_ingredients);
-                    rcv_ingredients.removeAllViews();
-                    rcv_ingredients.setLayoutManager(new LinearLayoutManager(context));
-                    IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(listI, context);
-                    rcv_ingredients.setAdapter(ingredientRecylerAdapter);
+                    PushContentToView(listI);
                 }
                 return false;
             }

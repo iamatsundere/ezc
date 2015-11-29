@@ -10,6 +10,7 @@
         android:layout_margin="2dp">
 
         <ImageView
+            android:id="@+id/item_category_img"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scaleType="center"
@@ -22,7 +23,6 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/item_recipe_img"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1.8"
@@ -30,6 +30,7 @@
                 android:scaleType="fitCenter"></LinearLayout>
 
             <ImageView
+                android:id="@+id/item_category_icon"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="4dp"
