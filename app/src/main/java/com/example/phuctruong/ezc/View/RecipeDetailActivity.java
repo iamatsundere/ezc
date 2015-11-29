@@ -46,6 +46,8 @@ public class RecipeDetailActivity extends ActionBarActivity implements Observabl
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("MÓN GÌ ĐẤY KHÁ NGON");
 
+
+
         ImageView icon = new ImageView(this); // Create an icon
         icon.setImageResource(R.drawable.icon_add);
 

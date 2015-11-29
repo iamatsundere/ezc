@@ -50,6 +50,8 @@ public class MenuDetailActivity extends ActionBarActivity {
         });
         TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
         txt.setText("THỰC ĐƠN X");
+
+        setCurrentTab(0);
         initTabs();
         initPager();
     }
@@ -80,35 +82,38 @@ public class MenuDetailActivity extends ActionBarActivity {
 
     private void initTabs() {
 
-        View btn_dish = findViewById(R.id.btn_dish_tab);
+        View btn_dish = findViewById(R.id.btn_dish_tab_img);
         btn_dish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 page.setCurrentItem(0, true);
+                setCurrentTab(0);
             }
         });
 
-        View btn_ingredient = findViewById(R.id.btn_ingredient_tab);
+        View btn_ingredient = findViewById(R.id.btn_ingredient_tab_img);
         btn_ingredient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 page.setCurrentItem(1, true);
+                setCurrentTab(1);
             }
         });
-        page.setCurrentItem(0, true);
+//        page.setCurrentItem(0, true);
     }
 
     private void setCurrentTab(int page) {
-        if (currentTab != null)
-            page = 0;
+
         View tab_ingredient = findViewById(R.id.btn_ingredient_tab);
         View tab_dish = findViewById(R.id.btn_dish_tab);
         if (page == 0) {
             currentTab = findViewById(R.id.btn_dish_tab);
+//            Log.d("tab1","ttttttttttttt");
             tab_dish.setBackgroundColor(getResources().getColor(R.color.primaryColor));
             tab_ingredient.setBackgroundColor(getResources().getColor(R.color.primaryColorDark));
         } else if (page == 1) {
             currentTab = findViewById(R.id.btn_ingredient_tab);
+//            Log.d("tab2","ttttttttttttt");
             tab_ingredient.setBackgroundColor(getResources().getColor(R.color.primaryColor));
             tab_dish.setBackgroundColor(getResources().getColor(R.color.primaryColorDark));
         }
@@ -142,6 +147,20 @@ public class MenuDetailActivity extends ActionBarActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_menu_detail, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_add_recipe:
+                Intent i = new Intent(getApplicationContext(), CategoryActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /**

@@ -6,17 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.phuctruong.ezc.Adapter.AlphabetRecyclerAdapter;
 import com.example.phuctruong.ezc.Adapter.IngredientRecylerAdapter;
 import com.example.phuctruong.ezc.Model.AlphabetItem;
 import com.example.phuctruong.ezc.Model.Ingredient;
@@ -27,10 +24,19 @@ import java.util.List;
 
 public class PriceActivity extends ActionBarActivity {
 
+    public static List<Ingredient> listI;
+    public static List<Ingredient> listIT;
+    public Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_price);
+
+        context = this;
+        listI = new ArrayList<>();
+        listI = getData();
+        listIT = new ArrayList<>();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_price);
         setSupportActionBar(toolbar);
@@ -53,17 +59,15 @@ public class PriceActivity extends ActionBarActivity {
 
         RecyclerView rcv_ingredients = (RecyclerView) findViewById(R.id.rcv_ingredients);
         rcv_ingredients.setLayoutManager(new LinearLayoutManager(this));
-        IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(getData(), this);
+        IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(listI, this);
         rcv_ingredients.setAdapter(ingredientRecylerAdapter);
     }
 
-    public List<AlphabetItem> getLettersList()
-    {
+    public List<AlphabetItem> getLettersList() {
         List<AlphabetItem> alphabetItems = new ArrayList<>();
-        for (char k='A'; k <='Z'; k++)
-        {
-            AlphabetItem item=new AlphabetItem();
-            item.setTagName(k+"");
+        for (char k = 'A'; k <= 'Z'; k++) {
+            AlphabetItem item = new AlphabetItem();
+            item.setTagName(k + "");
             alphabetItems.add(item);
         }
         return alphabetItems;
@@ -73,7 +77,7 @@ public class PriceActivity extends ActionBarActivity {
         List<Ingredient> ingredientList = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             Ingredient ingredient = new Ingredient();
-            ingredient.setName("i know place");
+            ingredient.setName(i + "");
             ingredient.setPrice("100,000VND");
             ingredient.setUnit("/gram");
             ingredientList.add(ingredient);
@@ -97,6 +101,36 @@ public class PriceActivity extends ActionBarActivity {
         if (searchView != null) {
             searchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
         }
+
+        SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                listIT = new ArrayList<>();
+                for (Ingredient i : listI)
+                    if (i.getName().contains(query))
+                        listIT.add(i);
+                RecyclerView rcv_ingredients = (RecyclerView) findViewById(R.id.rcv_ingredients);
+                rcv_ingredients.setLayoutManager(new LinearLayoutManager(context));
+                rcv_ingredients.removeAllViews();
+                IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(listIT, context);
+                rcv_ingredients.setAdapter(ingredientRecylerAdapter);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if (newText.compareTo("") == 0) {
+                    listIT = listI;
+                    RecyclerView rcv_ingredients = (RecyclerView) findViewById(R.id.rcv_ingredients);
+                    rcv_ingredients.removeAllViews();
+                    rcv_ingredients.setLayoutManager(new LinearLayoutManager(context));
+                    IngredientRecylerAdapter ingredientRecylerAdapter = new IngredientRecylerAdapter(listI, context);
+                    rcv_ingredients.setAdapter(ingredientRecylerAdapter);
+                }
+                return false;
+            }
+        };
+        searchView.setOnQueryTextListener(queryTextListener);
         return super.onCreateOptionsMenu(menu);
     }
 

@@ -20,19 +20,19 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2"
-            android:padding="8dp"
             android:gravity="center"
-            android:onClick="onAdjustPeople">
+            android:onClick="onAdjustPeople"
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/btn_minus"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center|center_vertical"
+                android:onClick="onAdjustPeople"
                 android:scaleType="centerInside"
                 android:src="@drawable/icon_minus_people"
-                android:textColor="@color/primaryColorDark"
-                android:onClick="onAdjustPeople"/>
+                android:textColor="@color/primaryColorDark" />
         </LinearLayout>
 
         <LinearLayout
@@ -61,18 +61,18 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="2"
-            android:padding="8dp"
             android:gravity="center"
-            android:onClick="onAdjustPeople">
+            android:onClick="onAdjustPeople"
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/btn_add"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center"
+                android:onClick="onAdjustPeople"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_add_people"
-                android:onClick="onAdjustPeople"/>
+                android:src="@drawable/icon_add_people" />
         </LinearLayout>
 
     </LinearLayout>
@@ -102,14 +102,15 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/primaryColor"
+            android:onClick="onMenuTabChanged"
             android:orientation="horizontal"
-            android:textColor="@color/white"
-            android:onClick="onMenuTabChanged">
+            android:textColor="@color/white">
 
             <ImageView
+                android:id="@+id/btn_dish_tab_img"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="12dp"
+                android:padding="12dp"
                 android:src="@drawable/icon_dish_tab" />
         </LinearLayout>
 
@@ -122,9 +123,10 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/btn_ingredient_tab_img"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="12dp"
+                android:padding="12dp"
                 android:src="@drawable/icon_ingredient_tab" />
         </LinearLayout>
 
