@@ -43,10 +43,11 @@ public class RecipeDetailActivity extends ActionBarActivity implements Observabl
                 onBackPressed();
             }
         });
-        TextView txt = (TextView) toolbar.findViewById(R.id.app_bar_title);
+        TextView txt = (TextView) findViewById(R.id.txt_rcp_name);
         txt.setText("MÓN GÌ ĐẤY KHÁ NGON");
 
-
+        TextView txt1 = (TextView) toolbar.findViewById(R.id.app_bar_title);
+        txt1.setText("");
 
         ImageView icon = new ImageView(this); // Create an icon
         icon.setImageResource(R.drawable.icon_add);

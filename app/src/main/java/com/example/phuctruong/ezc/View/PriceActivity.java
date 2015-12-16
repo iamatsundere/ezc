@@ -2,6 +2,7 @@ package com.example.phuctruong.ezc.View;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,9 +16,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.phuctruong.ezc.Adapter.IngredientRecylerAdapter;
+import com.example.phuctruong.ezc.Control.JsonParser;
 import com.example.phuctruong.ezc.Model.AlphabetItem;
 import com.example.phuctruong.ezc.Model.Ingredient;
 import com.example.phuctruong.ezc.R;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -140,12 +147,62 @@ public class PriceActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Sets the up search view theme.
-     *
-     * @param searchView
-     *            the new up search view theme
-     */
+
+    private class AsynTask extends AsyncTask<String, ArrayList<Ingredient>, ArrayList<Ingredient>> {
+
+        JSONArray dataJsonArr = null;
+        String yourJsonStringUrl = "http://192.168.30.1:8080/test/Ingredient";
+        ArrayList<Ingredient> listIngredient = new ArrayList<Ingredient>();
+
+        @Override
+        protected ArrayList<Ingredient> doInBackground(String... params) {
+            // TODO Auto-generated method stub
+            try {
+                // instantiate our json parser
+                JsonParser jParser = new JsonParser();
+
+                // -------- add value post request
+                ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+                // postParameters.add((NameValuePair) new
+                // BasicNameValuePair("x",
+                // Double.toString(mMap.getMyLocation().getLatitude())));
+                // postParameters.add((NameValuePair) new
+                // BasicNameValuePair("y",
+                // Double.toString(mMap.getMyLocation().getLongitude())));
+                postParameters.add((NameValuePair) new BasicNameValuePair("x", "21.054284"));
+                postParameters.add((NameValuePair) new BasicNameValuePair("y", "105.787111"));
+                // get json string from url
+                JSONObject json = jParser.getJSONFromUrl(yourJsonStringUrl, postParameters);
+
+                // get the array of users
+                dataJsonArr = json.getJSONArray("Ingredient");
+                // loop through all users
+                Ingredient tmp=new Ingredient();
+                for (int i = 0; i < dataJsonArr.length(); i++) {
+
+                    JSONObject c = dataJsonArr.getJSONObject(i);
+                    // Log.d(i + " c obj", c.get("name") + "");
+                    // tmp.setBackground(c.get("background").toString());
+                    // tmp.setPhone(c.get("phone").toString());
+                    // tmp.setDescription(c.get("description").toString());
+                    // tmp.setType(c.get("type").toString());
+                    listIngredient.add(tmp);
+                }
+
+            } catch (Exception e) {
+
+            }
+            return listIngredient;
+
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<Ingredient> strFromDoInBg) {
+
+            
+
+        }
+    }
 
 
 }

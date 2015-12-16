@@ -92,7 +92,7 @@ public class MenuDetailActivity extends ActionBarActivity {
         });
 
         View btn_ingredient = findViewById(R.id.btn_ingredient_tab_img);
-        btn_ingredient.setOnClickListener(new View.OnClickListener() {
+        btn_ingredient.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 page.setCurrentItem(1, true);
